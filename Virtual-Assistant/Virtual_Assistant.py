@@ -55,3 +55,12 @@ class Pragati():
                     wishme.greetuser()
                     print(wishme.greetuser())
                     return 'good night'
+
+                ################    Date & Time    #################
+                elif "date" in query:
+                    wishme.date()
+                    return 'date'
+
+                elif "time" in query:
+                    wishme.time()
+                    return 'time'
