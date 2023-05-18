@@ -22,6 +22,7 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="features\weather.py" />
     <Compile Include="features\wishme.py" />
     <Compile Include="features\__init__.py">
       <SubType>Code</SubType>
