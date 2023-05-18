@@ -1,5 +1,6 @@
 from features import weather, websearch, wishme
 from features.wishme import speak
+from features.AppOpener import appopener_open, appopener_close, appopener_list
 from webbrowser import open
 import speech_recognition as sr
 import webbrowser
@@ -23,7 +24,7 @@ def takecommand():
 
 
 class Pragati():
-    def pragati(audio):
+    def pragati():
         wishme.greetuser()
         print("I am Pragati ai your personal virtual assistant")
         speak("I am Pragati ai your personal virtual assistant")
@@ -38,32 +39,22 @@ class Pragati():
                 ################    Greet-User/Wishme   ################
                 if "good morning" in query:
                     wishme.greetuser()
-                    print(wishme.greetuser())
-                    return 'good morning,Sir!'
                 
                 elif "good afternoon" in query:
                     wishme.greetuser()
-                    print(wishme.greetuser())
-                    return 'good afternoon'
                 
                 elif "good evening" in query:
                     wishme.greetuser()
-                    print(wishme.greetuser())
-                    return 'good evening'
 
                 elif "good night" in query:
                     wishme.greetuser()
-                    print(wishme.greetuser())
-                    return 'good night'
 
                 ################    Date & Time    #################
                 elif "date" in query:
                     wishme.date()
-                    return 'date'
 
                 elif "time" in query:
                     wishme.time()
-                    return 'time'
 
                 ################    Search Engine   #################
                 elif "search for" in query:
@@ -72,12 +63,32 @@ class Pragati():
                     search_url = f"https://www.google.com/search?={querys}"
                     webbrowser.open(search_url)
                     speak(f"ok, searching for {querys}")
-                    return f"searching for {querys}"
 
                 ################    Weather    ##################
                 elif "weather" in query:
                     q = weather.get_weather("Nagpur")
                     speak(q)
                     print(q)
-                    return q
 
+                ################    Open/Close Different apps   ####################
+                elif "open" in query:
+                    inp = query
+                    appopener_open(inp)
+
+                elif "close" in query:
+                    inp = query
+                    appopener_close(inp)
+
+                elif "list of apps" in query:
+                    inp = query
+                    appopener_list(inp)
+
+
+
+
+
+
+
+
+
+Pragati.pragati()
