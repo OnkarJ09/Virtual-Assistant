@@ -67,6 +67,17 @@ class Pragati():
 
                 ################    Search Engine   #################
                 elif "search for" in query:
+                    querys = query.replace('search for','')
                     websearch.search_and_open(querys)
                     search_url = f"https://www.google.com/search?={querys}"
+                    webbrowser.open(search_url)
+                    speak(f"ok, searching for {querys}")
+                    return f"searching for {querys}"
+
+                ################    Weather    ##################
+                elif "weather" in query:
+                    q = weather.get_weather("Nagpur")
+                    speak(q)
+                    print(q)
+                    return q
 
