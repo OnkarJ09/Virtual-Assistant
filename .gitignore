@@ -1,6 +1,2 @@
 # Visual Studio 2015/2017 cache/options directory
 .vs/
-
-# Weather Plugin
-# Because for Hiding my personal API-KEY for Weather-API
-*features\weather.py
