@@ -64,3 +64,9 @@ class Pragati():
                 elif "time" in query:
                     wishme.time()
                     return 'time'
+
+                ################    Search Engine   #################
+                elif "search for" in query:
+                    websearch.search_and_open(querys)
+                    search_url = f"https://www.google.com/search?={querys}"
+
