@@ -19,3 +19,39 @@ def takecommand():
         print('---')
         return '---'
     return f"{query}"
+
+
+
+class Pragati():
+    def pragati(audio):
+        wishme.greetuser()
+        print("I am Pragati ai your personal virtual assistant")
+        speak("I am Pragati ai your personal virtual assistant")
+        print("How can I help you?")
+        speak("How can I help you?")
+
+        if __name__ == "__main__":
+            while True:
+                query = takecommand().lower()
+                print(query)
+
+                ################    Greet-User/Wishme   ################
+                if "good morning" in query:
+                    wishme.greetuser()
+                    print(wishme.greetuser())
+                    return 'good morning,Sir!'
+                
+                elif "good afternoon" in query:
+                    wishme.greetuser()
+                    print(wishme.greetuser())
+                    return 'good afternoon'
+                
+                elif "good evening" in query:
+                    wishme.greetuser()
+                    print(wishme.greetuser())
+                    return 'good evening'
+
+                elif "good night" in query:
+                    wishme.greetuser()
+                    print(wishme.greetuser())
+                    return 'good night'
