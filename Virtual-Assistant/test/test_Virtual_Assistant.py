@@ -30,7 +30,7 @@ def test_takecommand():
     except Exception as e:
         print('---')
         return '---'
-    return f"{query}"
+    assert f"{query}"
 
 
 
