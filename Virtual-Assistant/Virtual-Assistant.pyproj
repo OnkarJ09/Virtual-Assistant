@@ -30,6 +30,7 @@
     <Compile Include="features\__init__.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="test\test_features\test_weather.py" />
     <Compile Include="test\test_features\test_websearch.py" />
     <Compile Include="test\test_features\test_wishme.py" />
     <Compile Include="test\test_features\__init__.py">

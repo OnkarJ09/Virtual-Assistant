@@ -1,7 +1,7 @@
-import requests
+﻿import requests
 import json
 
-def get_weather(location):
+def test_get_weather(location):
     api_key = 'YOUR_API_KEY'
     base_url = 'http://api.openweathermap.org/data/2.5/weather'
     params = {'q': location, 'appid': api_key, 'units': 'metric'}
@@ -12,5 +12,6 @@ def get_weather(location):
     weather_conditions = str(data['weather'][0]['description'])
     a = f"the weather condition in '{location}' city is:'{weather_conditions}' tempearture is:'{temperature}�C' and humidity is:'{humidity}%'"
     print(a)
+    assert a.__contains__("the weather condition in")
     
 
