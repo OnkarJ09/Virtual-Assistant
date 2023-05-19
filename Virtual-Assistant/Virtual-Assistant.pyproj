@@ -23,17 +23,25 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="features\AppOpener.py" />
-    <Compile Include="features\opening_web-sites.py" />
+    <Compile Include="features\opening_web_sites.py" />
     <Compile Include="features\weather.py" />
     <Compile Include="features\websearch.py" />
     <Compile Include="features\wishme.py" />
     <Compile Include="features\__init__.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="test\test_features\test_websearch.py" />
+    <Compile Include="test\test_features\test_wishme.py" />
+    <Compile Include="test\test_features\__init__.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="test\test_Virtual_Assistant.py" />
     <Compile Include="Virtual_Assistant.py" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="features\" />
+    <Folder Include="test\" />
+    <Folder Include="test\test_features\" />
   </ItemGroup>
   <ItemGroup>
     <Interpreter Include="env\">
