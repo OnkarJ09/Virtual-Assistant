@@ -84,7 +84,14 @@ class Pragati():
                     appopener_list(inp)
 
                 ################    Opening Web-Sites   ####################
-                
+                elif "youtube" in query:
+                    opening_web_sites.youtube()
+
+                elif "w3schools" in query:
+                    opening_web_sites.w3schools()
+
+                elif "my learning" in query:
+                    opening_web_sites.my_learning()
 
 
 
