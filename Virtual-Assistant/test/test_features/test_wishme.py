@@ -1,6 +1,6 @@
 import datetime
 import pyttsx3
-
+import pytest
 
 engine = pyttsx3.init('sapi5')  #initilize pyttsx3
 voices = engine.getProperty('voices')
@@ -8,6 +8,11 @@ engine.setProperty('voices', voices[1].id)   #Change the voice of the Assistant
 engine.getProperty('rate')
 engine.setProperty('rate', 150)
 
+
+
+@pytest.fixture(autouse=True)
+def audio():
+    return "hiii"
 
 def test_speak(audio):          # Simple speak function for pyttsx3 run and wait
     engine.say(audio)
