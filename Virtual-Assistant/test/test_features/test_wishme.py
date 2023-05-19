@@ -9,38 +9,41 @@ engine.getProperty('rate')
 engine.setProperty('rate', 150)
 
 
-def speak(audio):          # Simple speak function for pyttsx3 run and wait
+def test_speak(audio):          # Simple speak function for pyttsx3 run and wait
     engine.say(audio)
     engine.runAndWait()
 
-def greetuser():            # It will wish the user according to the Time
+def test_greetuser():            # It will wish the user according to the Time
     hour = int(datetime.datetime.now().hour)
     if hour >= 0 and hour <= 12:
         a = "Good Morning"
         print(a)
-        speak(a)
+        test_speak(a)
     elif hour > 12 and hour <= 17:
         a = "Good Afternoon"
         print(a)
-        speak(a)
+        test_speak(a)
     elif hour > 17 and hour <= 20:
         a = "Good Evening"
         print(a)
-        speak(a)
+        test_speak(a)
     else:
         a = "Good Night"
         print(a)
-        speak(a)
+        test_speak(a)
+    assert a.__contains__("Good")
 
 
-def time():
+def test_time():
     time = datetime.datetime.now().strftime('%H:%M')
-    speak(time)
+    test_speak(time)
     print(time)
+    assert time.__contains__(":")
 
 
-def date():
+def test_date():
     date = datetime.datetime.now().strftime('%B %d,%Y')
-    speak(date)
+    test_speak(date)
     print(date)
+    assert date.__contains__(",")
 
