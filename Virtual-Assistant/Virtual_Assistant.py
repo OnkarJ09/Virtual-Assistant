@@ -1,4 +1,4 @@
-from features import weather, websearch, wishme
+from features import weather, websearch, wishme, opening_web_sites
 from features.wishme import speak
 from features.AppOpener import appopener_open, appopener_close, appopener_list
 from webbrowser import open
@@ -82,6 +82,9 @@ class Pragati():
                 elif "list of apps" in query:
                     inp = query
                     appopener_list(inp)
+
+                ################    Opening Web-Sites   ####################
+                
 
 
 
