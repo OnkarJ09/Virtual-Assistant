@@ -1,7 +1,7 @@
+from email.mime import audio
 from features import weather, websearch, wishme, opening_web_sites
 from features.wishme import speak
 from features.AppOpener import appopener_open, appopener_close, appopener_list
-from webbrowser import open
 import speech_recognition as sr
 import webbrowser
 
@@ -24,7 +24,7 @@ def takecommand():
 
 
 class Pragati():
-    def pragati():
+    def pragati(audio):
         wishme.greetuser()
         print("I am Pragati ai your personal virtual assistant")
         speak("I am Pragati ai your personal virtual assistant")
@@ -101,4 +101,4 @@ class Pragati():
 
 
 
-Pragati.pragati()
+Pragati.pragati(audio)
