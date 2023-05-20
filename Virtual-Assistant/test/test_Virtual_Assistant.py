@@ -119,4 +119,48 @@ class TestPragati():
                 elif "my learning" in query:
                     test_opening_web_sites.test_my_learning()
                     assert query.__contains__("my learning")
+
+                elif "facebook" in query:
+                    test_opening_web_sites.test_facebook()
+                    assert query.__contains__("facebook")
+                
+                elif "instagram" in query:
+                    test_opening_web_sites.test_instagram()
+                    assert query.__contains__("instagram")
+
+                elif "whatsapp" in query:
+                    test_opening_web_sites.test_whatsapp()
+                    assert query.__contains__("whatsapp")
+
+                elif "telegram" in query:
+                    test_opening_web_sites.test_telegram()
+                    assert query.__contains__("telegram")
+
+                elif "github" in query:
+                    test_opening_web_sites.test_github()
+                    assert query.__contains__("github")
+
+                elif "replit" in query:
+                    test_opening_web_sites.test_replit()
+                    assert query.__contains__("replit")
+
+                elif "gmail" in query:
+                    test_opening_web_sites.test_gmail()
+                    assert query.__contains__("gmail")
+
+                elif "google" in query:
+                    test_opening_web_sites.test_google()
+                    assert query.__contains__("google")
+
+                elif "calendar" in query:
+                    test_opening_web_sites.test_calendar()
+                    assert query.__contains__("calendar")
+
+                elif "python packages" in query:
+                    test_opening_web_sites.test_pypi()
+                    assert query.__contains__("python packages")
+
+                elif "chat g p t" in query:
+                    test_opening_web_sites.test_chatgpt()
+                    assert query.__contains__("chat g p t")
         
