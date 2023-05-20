@@ -93,6 +93,39 @@ class Pragati():
                 elif "my learning" in query:
                     opening_web_sites.my_learning()
 
+                elif "facebook" in query:
+                    opening_web_sites.facebook()
+                
+                elif "instagram" in query:
+                    opening_web_sites.instagram()
+
+                elif "whatsapp" in query:
+                    opening_web_sites.whatsapp()
+
+                elif "telegram" in query:
+                    opening_web_sites.telegram()
+
+                elif "github" in query:
+                    opening_web_sites.github()
+
+                elif "replit" in query:
+                    opening_web_sites.replit()
+
+                elif "gmail" in query:
+                    opening_web_sites.gmail()
+
+                elif "google" in query:
+                    opening_web_sites.google()
+
+                elif "calendar" in query:
+                    opening_web_sites.calendar()
+
+                elif "python packages" in query:
+                    opening_web_sites.pypi()
+
+                elif "chat g p t" in query:
+                    opening_web_sites.chatgpt()
+
 
 
 

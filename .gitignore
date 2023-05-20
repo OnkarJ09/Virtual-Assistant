@@ -362,5 +362,6 @@
 # # Fody - auto-generated XML schema
 # FodyWeavers.xsd
 
-#Excluding for privacy issue
+
+# Excludind because of privacy
 */app_data.json
