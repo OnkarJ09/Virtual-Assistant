@@ -162,5 +162,5 @@ class TestPragati():
 
                 elif "chat g p t" in query:
                     test_opening_web_sites.test_chatgpt()
-                    assert query.__contains__("chat g p t")
+                    assert query.__contains__("chat g p t") 
         
