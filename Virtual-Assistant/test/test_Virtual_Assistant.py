@@ -136,7 +136,7 @@ class TestPragati():
                     test_opening_web_sites.test_telegram()
                     assert query.__contains__("telegram")
 
-                elif "github" in query:
+                elif "github" in query:                      
                     test_opening_web_sites.test_github()
                     assert query.__contains__("github")
 
