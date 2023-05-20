@@ -16,17 +16,21 @@ def speak(audio):          # Simple speak function for pyttsx3 run and wait
 def greetuser():            # It will wish the user according to the Time
     hour = int(datetime.datetime.now().hour)
     if hour >= 0 and hour <= 12:
-        print("Good Morning")
-        speak("Good Morning")
+        a = "Good Morning"
+        print(a)
+        speak(a)
     elif hour > 12 and hour <= 17:
-        print("Good Afternoon")
-        speak("Good Afternoo!")
+        a = "Good Afternoon"
+        print(a)
+        speak(a)
     elif hour > 17 and hour <= 20:
-        print("Good Evening")
-        speak("Good Evening")
+        a = "Good Evening"
+        print(a)
+        speak(a)
     else:
-        print("Good Night")
-        speak("Good Night")
+        a = "Good Night"
+        print(a)
+        speak(a)
 
 
 def time():

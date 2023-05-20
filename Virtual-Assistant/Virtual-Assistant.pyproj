@@ -12,6 +12,7 @@
     <Name>Virtual-Assistant</Name>
     <RootNamespace>Virtual-Assistant</RootNamespace>
     <InterpreterId>MSBuild|env|$(MSBuildProjectFullPath)</InterpreterId>
+    <TestFramework>Pytest</TestFramework>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <DebugSymbols>true</DebugSymbols>
@@ -30,10 +31,21 @@
     <Compile Include="features\__init__.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="test\test_features\test_AppOpener.py" />
+    <Compile Include="test\test_features\test_opening_web_sites.py" />
+    <Compile Include="test\test_features\test_weather.py" />
+    <Compile Include="test\test_features\test_websearch.py" />
+    <Compile Include="test\test_features\test_wishme.py" />
+    <Compile Include="test\test_features\__init__.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="test\test_Virtual_Assistant.py" />
     <Compile Include="Virtual_Assistant.py" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="features\" />
+    <Folder Include="test\" />
+    <Folder Include="test\test_features\" />
   </ItemGroup>
   <ItemGroup>
     <Interpreter Include="env\">
