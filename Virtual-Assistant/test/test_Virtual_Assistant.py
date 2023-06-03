@@ -3,6 +3,7 @@ from test_features.test_wishme import test_speak
 from test_features.test_AppOpener import test_appopener_open, test_appopener_close, test_appopener_list
 import speech_recognition as sr
 import webbrowser
+import pyautogui
 import pytest
 
 
@@ -109,7 +110,11 @@ class TestPragati():
 
                 ################    Opening Web-Sites   ####################
                 elif "youtube" in query:
-                    test_opening_web_sites.test_youtube()
+                    test_speak("what you want to search")
+                    print("what you want to search?")
+                    query = query.replace("search youtube","")
+                    webbrowser.open(f"https://www.youtube.com/results?search_query={query}")
+                    test_speak(f"searching on youtube for {query}")
                     assert query.__contains__("youtube")
 
                 elif "w three schools" in query:
@@ -163,4 +168,43 @@ class TestPragati():
                 elif "chat g p t" in query:
                     test_opening_web_sites.test_chatgpt()
                     assert query.__contains__("chat g p t")
+
+                ################    Windows Automation    ##################
+                elif "maximize this window" in query:
+                    pyautogui.hotkey('win','up')
+                    assert query.__contains__("window")
+
+                elif "minimize this window" in query:
+                    pyautogui.hotkey('win','down')
+                    assert query.__contains__("window")
+
+                elif "shift this window" in query:   
+                    #this will shift windows on the top
+                    if "shift this window to right" in query:
+                        pyautogui.hotkey('win','right')
+                        assert query.__contains__("window")
+
+                    elif "shift this window to left" in query:
+                        pyautogui.hotkey('win','left')
+                        assert query.__contains__("window")
+
+                    elif "shift this window to top right" in query:
+                        with pyautogui.hold('win'):
+                            pyautogui.press(['right','up'])
+                            assert query.__contains__("window")
+
+                    elif "shift this window to top left" in query:
+                        with pyautogui.hold('win'):
+                            pyautogui.press(['left','up'])
+                            assert query.__contains__("window")
+
+                    elif "shift this window to bottom right" in query:
+                        with pyautogui.hold('win'):
+                            pyautogui.press(['right','down'])
+                            assert query.__contains__("window")
+
+                    elif "shift this window to bottom left" in query:
+                        with pyautogui.hold('win'):
+                            pyautogui.press(['left','down'])
+                            assert query.__contains__("window")
         
