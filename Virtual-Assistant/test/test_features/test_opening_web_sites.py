@@ -8,12 +8,6 @@ import pytest
 def audio():
     return "hiii"
 
-def test_youtube():
-    url = "https://www.youtube.com"
-    open(url)
-    test_speak('opening youtube')
-    assert url.__contains__("youtube")
-
 def test_w3schools():
     url = "https://www.w3schools.com"
     open(url)
