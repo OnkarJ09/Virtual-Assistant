@@ -4,6 +4,9 @@ from features.wishme import speak
 from features.AppOpener import appopener_open, appopener_close, appopener_list
 import speech_recognition as sr
 import webbrowser
+import time
+import pyautogui
+import os
 
 
 def takecommand():
@@ -85,7 +88,11 @@ class Pragati():
 
                 ################    Opening Web-Sites   ####################
                 elif "youtube" in query:
-                    opening_web_sites.youtube()
+                    speak("what you want to search")
+                    print("what you want to search?")
+                    query = query.replace("search youtube","")
+                    webbrowser.open(f"https://www.youtube.com/results?search_query={query}")
+                    speak(f"searching on youtube for {query}")
 
                 elif "w3schools" in query:
                     opening_web_sites.w3schools()
@@ -125,6 +132,40 @@ class Pragati():
 
                 elif "chat g p t" in query:
                     opening_web_sites.chatgpt()
+
+                ################    Windows Automation    ##################
+                elif "maximize this window" in query:
+                    pyautogui.hotkey('win','up')
+
+                elif "minimize this window" in query:
+                    pyautogui.hotkey('win','down')
+
+                elif "shift this window" in query:   
+                    #this will shift windows on the top
+                    if "shift this window to right" in query:
+                        pyautogui.hotkey('win','right')
+
+                    elif "shift this window to left" in query:
+                        pyautogui.hotkey('win','left')
+
+                    elif "shift this window to top right" in query:
+                        with pyautogui.hold('win'):
+                            pyautogui.press(['right','up'])
+
+                    elif "shift this window to top left" in query:
+                        with pyautogui.hold('win'):
+                            pyautogui.press(['left','up'])
+
+                    elif "shift this window to bottom right" in query:
+                        with pyautogui.hold('win'):
+                            pyautogui.press(['right','down'])
+
+                    elif "shift this window to bottom left" in query:
+                        with pyautogui.hold('win'):
+                            pyautogui.press(['left','down'])
+
+                
+
 
 
 
