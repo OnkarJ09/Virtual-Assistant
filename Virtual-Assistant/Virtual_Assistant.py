@@ -1,5 +1,5 @@
 from email.mime import audio
-from features import weather, websearch, wishme, opening_web_sites
+from features import weather, websearch, wishme, opening_web_sites, wikipedia
 from features.wishme import speak
 from features.AppOpener import appopener_open, appopener_close, appopener_list
 import speech_recognition as sr
@@ -7,6 +7,7 @@ import webbrowser
 import time
 import pyautogui
 import os
+import wikipedia as wiki
 
 
 def takecommand():
@@ -86,6 +87,14 @@ class Pragati():
                 elif "list of apps" in query:
                     inp = query
                     appopener_list(inp)
+
+                ################    Wikipedia   ###################
+                elif "wikipedia" in query:
+                    wikipedia.wikipedia()
+                    query = query.replace('search wikipedia for','')
+                    results = wiki.summary(query, sentences=3)
+                    speak(f"according to wikipedia {results}")
+                    print(f"according to wikipedia {results}")
 
                 ################    Opening Web-Sites   ####################
                 elif "youtube" in query:

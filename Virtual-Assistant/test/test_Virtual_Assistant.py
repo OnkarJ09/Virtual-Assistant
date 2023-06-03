@@ -1,4 +1,4 @@
-from test_features import test_wishme, test_weather, test_websearch, test_opening_web_sites
+from test_features import test_wishme, test_weather, test_websearch, test_opening_web_sites, test_wikipedia
 from test_features.test_wishme import test_speak
 from test_features.test_AppOpener import test_appopener_open, test_appopener_close, test_appopener_list
 import speech_recognition as sr
@@ -107,6 +107,11 @@ class TestPragati():
                     inp = query
                     test_appopener_list(inp)
                     return query
+
+                ################    Wikipedia   #####################
+                elif "wikipedia" in query:
+                    q = query.replace('search wikipedia for','')
+                    test_wikipedia.test_wikipedia()
 
                 ################    Opening Web-Sites   ####################
                 elif "youtube" in query:
