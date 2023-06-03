@@ -3,9 +3,5 @@ import wikipedia
 
 
 
-def wikipedia(querys):
+def wikipedia():
     speak("searching wikipedia...")
-    results = wikipedia.summary(querys, sentences=3)
-    speak(f"according to wikipedia {results}")
-    a = f"according to wikipedia {results}"
-    print(a)
