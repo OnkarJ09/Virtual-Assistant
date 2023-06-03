@@ -100,7 +100,8 @@ class Pragati():
                 elif "youtube" in query:
                     speak("what you want to search")
                     print("what you want to search?")
-                    query = query.replace("search youtube","")
+                    q = takecommand().lower()
+                    q = q.replace("search for","") 
                     webbrowser.open(f"https://www.youtube.com/results?search_query={query}")
                     speak(f"searching on youtube for {query}")
 
