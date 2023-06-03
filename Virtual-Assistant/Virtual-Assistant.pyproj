@@ -35,6 +35,7 @@
     <Compile Include="test\test_features\test_opening_web_sites.py" />
     <Compile Include="test\test_features\test_weather.py" />
     <Compile Include="test\test_features\test_websearch.py" />
+    <Compile Include="test\test_features\test_wikipedia.py" />
     <Compile Include="test\test_features\test_wishme.py" />
     <Compile Include="test\test_features\__init__.py">
       <SubType>Code</SubType>
