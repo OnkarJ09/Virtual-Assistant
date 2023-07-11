@@ -24,7 +24,6 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="features\AppOpener.py" />
-    <Compile Include="features\opening_web_sites.py" />
     <Compile Include="features\weather.py" />
     <Compile Include="features\websearch.py" />
     <Compile Include="features\wishme.py" />
