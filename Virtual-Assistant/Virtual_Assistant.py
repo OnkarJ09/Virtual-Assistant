@@ -1,5 +1,5 @@
 from email.mime import audio
-from features import weather, websearch, wishme, opening_web_sites, wikipedia
+from features import weather, websearch, wishme
 from features.wishme import speak
 from features.AppOpener import appopener_open, appopener_close, appopener_list
 import speech_recognition as sr
@@ -76,7 +76,7 @@ class Pragati():
                     print(q)
 
                 ################    Open/Close Different apps   ####################
-                elif "open" in query:
+                elif "start" in query:
                     inp = query
                     appopener_open(inp)
 
@@ -88,15 +88,7 @@ class Pragati():
                     inp = query
                     appopener_list(inp)
 
-                ################    Wikipedia   ###################
-                elif "wikipedia" in query:
-                    wikipedia.wikipedia()
-                    query = query.replace('search wikipedia for','')
-                    results = wiki.summary(query, sentences=3)
-                    speak(f"according to wikipedia {results}")
-                    print(f"according to wikipedia {results}")
-
-                ################    Opening Web-Sites   ####################
+                ################    Opening Youtube_search   ####################
                 elif "youtube" in query:
                     speak("what you want to search")
                     print("what you want to search?")
@@ -105,44 +97,27 @@ class Pragati():
                     webbrowser.open(f"https://www.youtube.com/results?search_query={query}")
                     speak(f"searching on youtube for {query}")
 
-                elif "w3schools" in query:
-                    opening_web_sites.w3schools()
+                ################    Opening Different Web-sites    ##################
 
-                elif "my learning" in query:
-                    opening_web_sites.my_learning()
-
-                elif "facebook" in query:
-                    opening_web_sites.facebook()
-                
-                elif "instagram" in query:
-                    opening_web_sites.instagram()
-
-                elif "whatsapp" in query:
-                    opening_web_sites.whatsapp()
-
-                elif "telegram" in query:
-                    opening_web_sites.telegram()
-
-                elif "github" in query:
-                    opening_web_sites.github()
-
-                elif "replit" in query:
-                    opening_web_sites.replit()
-
-                elif "gmail" in query:
-                    opening_web_sites.gmail()
-
-                elif "google" in query:
-                    opening_web_sites.google()
-
-                elif "calendar" in query:
-                    opening_web_sites.calendar()
-
-                elif "python packages" in query:
-                    opening_web_sites.pypi()
-
-                elif "chat g p t" in query:
-                    opening_web_sites.chatgpt()
+                elif "open" in query:
+                    sites = [["youtube", 'https://www.youtube.com'], 
+                             ["facebook", 'https://www.facebook.com'], 
+                             ["instagram", 'https://www.instagram.com'], 
+                             ["w3schools", 'https://www.w3schools.com'], 
+                             ["w3schools learning", 'https://my-learning.w3schools.com'], 
+                             ["whatsapp", 'https://web.whatsapp.com'], 
+                             ["telegram", 'https://web.telegram.com'], 
+                             ["github", 'https://github.com'], 
+                             ["replit", 'https://replit.com'], 
+                             ["g mail", 'https://mail.google.com'],
+                             ["google", 'https://www.google.com'],
+                             ["google calendar", 'https://calendar.google.com'],
+                             ["online python packages", 'https://pypi.org'],
+                             ["chat g p t", 'https://chat.openai.com']]
+                    for site in sites:
+                        if f"open {site[0]}" in query:
+                            speak(f"opening {site[0]}")
+                            webbrowser.open(site[1])
 
                 ################    Windows Automation    ##################
                 elif "maximize this window" in query:

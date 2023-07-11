@@ -1,4 +1,4 @@
-from test_features import test_wishme, test_weather, test_websearch, test_opening_web_sites, test_wikipedia
+from test_features import test_wishme, test_weather, test_websearch
 from test_features.test_wishme import test_speak
 from test_features.test_AppOpener import test_appopener_open, test_appopener_close, test_appopener_list
 import speech_recognition as sr
@@ -93,7 +93,7 @@ class TestPragati():
                     return query
 
                 ################    Open/Close Different apps   ####################
-                elif "open" in query:
+                elif "start" in query:
                     inp = query
                     test_appopener_open(inp)
                     return query
@@ -108,12 +108,7 @@ class TestPragati():
                     test_appopener_list(inp)
                     return query
 
-                ################    Wikipedia   #####################
-                elif "wikipedia" in query:
-                    q = query.replace('search wikipedia for','')
-                    test_wikipedia.test_wikipedia()
-
-                ################    Opening Web-Sites   ####################
+                ################    Opening Youtube_search   ####################
                 elif "youtube" in query:
                     test_speak("what you want to search")
                     print("what you want to search?")
@@ -122,57 +117,27 @@ class TestPragati():
                     test_speak(f"searching on youtube for {query}")
                     assert query.__contains__("youtube")
 
-                elif "w three schools" in query:
-                    test_opening_web_sites.test_w3schools()
-                    assert query.__contains__("w three schools")
+                ################    Opening Different Web-sites    ######################
 
-                elif "my learning" in query:
-                    test_opening_web_sites.test_my_learning()
-                    assert query.__contains__("my learning")
-
-                elif "facebook" in query:
-                    test_opening_web_sites.test_facebook()
-                    assert query.__contains__("facebook")
-                
-                elif "instagram" in query:
-                    test_opening_web_sites.test_instagram()
-                    assert query.__contains__("instagram")
-
-                elif "whatsapp" in query:
-                    test_opening_web_sites.test_whatsapp()
-                    assert query.__contains__("whatsapp")
-
-                elif "telegram" in query:
-                    test_opening_web_sites.test_telegram()
-                    assert query.__contains__("telegram")
-
-                elif "github" in query:                      
-                    test_opening_web_sites.test_github()
-                    assert query.__contains__("github")
-
-                elif "replit" in query:
-                    test_opening_web_sites.test_replit()
-                    assert query.__contains__("replit")
-
-                elif "gmail" in query:
-                    test_opening_web_sites.test_gmail()
-                    assert query.__contains__("gmail")
-
-                elif "google" in query:
-                    test_opening_web_sites.test_google()
-                    assert query.__contains__("google")
-
-                elif "calendar" in query:
-                    test_opening_web_sites.test_calendar()
-                    assert query.__contains__("calendar")
-
-                elif "python packages" in query:
-                    test_opening_web_sites.test_pypi()
-                    assert query.__contains__("python packages")
-
-                elif "chat g p t" in query:
-                    test_opening_web_sites.test_chatgpt()
-                    assert query.__contains__("chat g p t")
+                elif "open" in query:
+                    sites = [["youtube", 'https://www.youtube.com'], 
+                             ["facebook", 'https://www.facebook.com'], 
+                             ["instagram", 'https://www.instagram.com'], 
+                             ["w3schools", 'https://www.w3schools.com'], 
+                             ["w3schools learning", 'https://my-learning.w3schools.com'], 
+                             ["whatsapp", 'https://web.whatsapp.com'], 
+                             ["telegram", 'https://web.telegram.com'], 
+                             ["github", 'https://github.com'], 
+                             ["replit", 'https://replit.com'], 
+                             ["g mail", 'https://mail.google.com'],
+                             ["google", 'https://www.google.com'],
+                             ["google calendar", 'https://calendar.google.com'],
+                             ["online python packages", 'https://pypi.org'],
+                             ["chat g p t", 'https://chat.openai.com']]
+                    for site in sites:
+                        if f"open {site[0]}" in query:
+                            test_speak(f"opening {site[0]}")
+                            webbrowser.open(site[1])
 
                 ################    Windows Automation    ##################
                 elif "maximize this window" in query:
